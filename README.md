@@ -12,15 +12,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     # Build your app here
 
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     needs: build
     
     steps:
-    - uses: citizen-of-planet-earth/cf-cli-action@master
+    - uses: NagarroES/cf-cli-action@master
       with:
         cf_api: https://api.my-cloud-foundry.com
         cf_username: ${{ secrets.CF_USER }}
